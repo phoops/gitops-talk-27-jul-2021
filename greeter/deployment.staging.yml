@@ -1,0 +1,47 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeter
+  labels:
+    app: greeter
+    service: greeter-service
+spec:
+  selector:
+    matchLabels:
+      app: greeter
+      service: greeter-service
+  template:
+    metadata:
+      labels:
+        app: greeter
+        service: greeter-service
+    spec:
+      containers:
+        - name: greeter
+          ports:
+            - protocol: TCP
+              containerPort: 4242
+          livenessProbe:
+            httpGet:
+              path: /api/healtz
+              port: 4242
+            initialDelaySeconds: 30
+            periodSeconds: 100
+          env:
+            - name: ENVIRONMENT
+              value: "staging"
+            - name: DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: staging-common-config
+                  key: db_url
+            - name: DB_ENABLED
+              valueFrom:
+                secretKeyRef:
+                  name: common-secret
+                  key: secret
+          image: locura/gitops_greeter:v0.0.1
+  replicas: 1
+  strategy:
+    type: Recreate
