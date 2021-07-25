@@ -1,0 +1,16 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: redis
+spec:
+  selector:
+    matchLabels:
+      app: redis
+  volumeClaimTemplates:
+  - metadata:
+      name: redis-storage
+    spec:
+      resources:
+        requests:
+          storage: 10Gi
