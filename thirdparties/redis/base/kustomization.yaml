@@ -6,3 +6,4 @@ namespace: redis
 resources:
   - service.yaml
   - statefulset.yaml
+  - namespace.yaml
