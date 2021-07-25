@@ -1,0 +1,14 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeter
+  labels:
+    app: greeter
+    service: greeter-service
+spec:
+  selector:
+    matchLabels:
+      app: greeter
+      service: greeter-service
+  replicas: 2

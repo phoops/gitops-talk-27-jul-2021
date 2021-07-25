@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: common-config
+  name: greeter-config
 data:
   environment: development
   greeter.port: "8080"

@@ -32,19 +32,19 @@ spec:
             - name: ENVIRONMENT
               valueFrom:
                 configMapKeyRef:
-                  name: common-config
+                  name: greeter-config
                   key: environment
             - name: SERVER_PORT
               valueFrom:
                 configMapKeyRef:
-                  name: common-config
+                  name: greeter-config
                   key: greeter.port
             - name: REDIS_HOST
               valueFrom:
                 secretKeyRef:
-                  name: common-secret
+                  name: greeter-secret
                   key: redis.host
-          image: locura/gitops_greeter:v0.1.0
+          image: locura/gitops_greeter # latest here but will be replaced in patches
   replicas: 1
   strategy:
     type: Recreate
