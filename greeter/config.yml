@@ -4,4 +4,5 @@ kind: ConfigMap
 metadata:
   name: common-config
 data:
-  db_url: postgres.svc.cluster.local
+  environment: development
+  greeter.port: "8080"

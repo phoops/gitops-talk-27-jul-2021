@@ -30,17 +30,20 @@ spec:
             periodSeconds: 100
           env:
             - name: ENVIRONMENT
-              value: "production"
-            - name: DB_URL
               valueFrom:
                 configMapKeyRef:
                   name: common-config
-                  key: db_url
-            - name: DB_ENABLED
+                  key: environment
+            - name: SERVER_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: common-config
+                  key: greeter.port
+            - name: REDIS_HOST
               valueFrom:
                 secretKeyRef:
                   name: common-secret
-                  key: secret
+                  key: redis.host
           image: locura/gitops_greeter:v0.0.2
   replicas: 1
   strategy:

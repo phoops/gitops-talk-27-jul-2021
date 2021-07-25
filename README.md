@@ -14,5 +14,5 @@ minikube addons enable ingress-dns
 ## Wild-west
 Not everything is versioned, in the example a secret has been created manually via "kubectl create" because of the fear of versioning secrets
 ```
-kubectl create secret generic common-secret --from-literal=secret=true
+kubectl create secret generic common-secret --from-literal=redis.host=redis.default.svc.cluster.local:6379
 ```
