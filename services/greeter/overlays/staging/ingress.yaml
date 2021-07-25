@@ -5,7 +5,7 @@ metadata:
   name: greeter-ingress
 spec:
   rules:
-    - host: staging.mykube.kube
+    - host: staging.minikube.kube
       http:
         paths:
           - path: /
