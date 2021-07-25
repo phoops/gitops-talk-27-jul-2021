@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: argocd
+resources:
+  - configmaps.yaml
+  - crd.yaml
+  - deployment.yaml
+  - rbac.yaml
+  - secret.yaml.sec
+  - git-crypt-secret.yaml.sec
+  - service.yaml
+  
+images:
+  - name: locura/argocd-custom-git-crypt
+    newTag: "v2.0.4-0.0.3"
