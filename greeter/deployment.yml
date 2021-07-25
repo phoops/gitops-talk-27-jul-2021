@@ -44,7 +44,7 @@ spec:
                 secretKeyRef:
                   name: common-secret
                   key: redis.host
-          image: locura/gitops_greeter:v0.0.2
+          image: locura/gitops_greeter:v0.1.0
   replicas: 1
   strategy:
     type: Recreate
