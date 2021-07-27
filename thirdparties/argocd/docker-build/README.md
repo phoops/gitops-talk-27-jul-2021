@@ -15,7 +15,7 @@ Please build and push the image with a tag equals to the argocd version we are u
 For example `v2.0.0-0.0.1` so we can recognize the argo version involved in the custom image.
 
 ```sh
-    docker build -t locura/argocd-custom-git-crypt:<argocd-version>-<custom-image-version> .
+    docker build -t phoops/argocd-custom-git-crypt:<argocd-version>-<custom-image-version> .
 ```
 
 The version of the custom image is set on the `kustomization` of base.

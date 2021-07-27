@@ -12,5 +12,5 @@ resources:
   - service.yaml
   
 images:
-  - name: locura/argocd-custom-git-crypt
-    newTag: "v2.0.4-0.0.3"
+  - name: phoops/argocd-custom-git-crypt
+    newTag: "v2.0.4-0.0.5"

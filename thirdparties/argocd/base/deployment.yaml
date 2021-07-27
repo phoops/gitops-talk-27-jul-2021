@@ -145,7 +145,7 @@ spec:
         - argocd-repo-server
         - --redis
         - argocd-redis:6379
-        image: locura/argocd-custom-git-crypt
+        image: phoops/argocd-custom-git-crypt
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 3
