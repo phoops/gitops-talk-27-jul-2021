@@ -8,7 +8,7 @@ metadata:
   name: argocd-cm
 data:
     repositories: |
-      - url: git@github.com:locurateam/gitops-talk-27-jul-2021.git
+      - url: git@github.com:phoops/gitops-talk-27-jul-2021.git
         sshPrivateKeySecret:
           name: github-secret
           key: githubAccessKey

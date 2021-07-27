@@ -13,7 +13,7 @@ spec:
   project: default
   source:
     path: services/greeter/overlays/development
-    repoURL: git@github.com:locurateam/gitops-talk-27-jul-2021.git
+    repoURL: git@github.com:phoops/gitops-talk-27-jul-2021.git
     targetRevision: fully-automated
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -30,5 +30,5 @@ spec:
   project: default
   source:
     path: thirdparties/redis/overlays/development
-    repoURL: git@github.com:locurateam/gitops-talk-27-jul-2021.git
+    repoURL: git@github.com:phoops/gitops-talk-27-jul-2021.git
     targetRevision: fully-automated
